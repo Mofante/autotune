@@ -92,5 +92,9 @@ def upload_file():
 def download_file(filename):
     return send_file(os.path.join(app.config['OUTPUT_FOLDER'], filename), as_attachment=True)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

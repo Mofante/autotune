@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Correction App - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+    <div class="container mx-auto max-w-4xl bg-white shadow-md rounded-lg p-8">
+        <h1 class="text-4xl font-bold mb-6 text-center text-gray-800 border-b pb-4">Audio Correction and Effects Application</h1>
+        
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700">Overview</h2>
+            <p class="text-gray-600 leading-relaxed">
+                This pitch correction application is an audio processing tool that leverages signal processing techniques to manipulate vocal audio. Built using Python, the application provides users with two pitch correction methods and creative audio effects.
+            </p>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700">Key Components</h2>
+            <p class="text-gray-600 mb-4">
+                The application consists of three primary Python modules:
+            </p>
+
+            <div class="space-y-4">
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">1. Flask Web Application (<code>app.py</code>)</h3>
+                    <p class="text-gray-600 mb-2">
+                        The web interface allows users to:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 pl-4">
+                        <li>Upload audio files (supporting WAV, MP3, OGG, and FLAC formats)</li>
+                        <li>Choose pitch correction methods</li>
+                        <li>Apply optional audio effects</li>
+                        <li>Download processed audio files</li>
+                    </ul>
+
+                    <h4 class="text-lg font-medium mt-3 mb-2 text-gray-700">Upload and Processing Workflow</h4>
+                    <ol class="list-decimal list-inside text-gray-600 pl-4">
+                        <li>Generates a unique filename for each uploaded file</li>
+                        <li>Supports two pitch correction strategies:
+                            <ul class="list-disc list-inside pl-4">
+                                <li>Nearest note correction</li>
+                                <li>Scale-based correction</li>
+                            </ul>
+                        </li>
+                        <li>Provides optional audio effects with adjustable intensity</li>
+                    </ol>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">2. Autotune Core (<code>autotune.py</code>)</h3>
+                    <p class="text-gray-600 mb-2">
+                        The heart of the pitch correction system, implementing audio processing techniques:
+                    </p>
+
+                    <h4 class="text-lg font-medium mt-3 mb-2 text-gray-700">Pitch Correction Methods</h4>
+                    <ul class="list-disc list-inside text-gray-600 pl-4">
+                        <li><strong>Nearest Note Correction</strong>: Rounds pitch to the closest MIDI note</li>
+                        <li><strong>Scale-Based Correction</strong>: Maps pitch to the nearest note within a specified musical scale</li>
+                    </ul>
+
+                    <h4 class="text-lg font-medium mt-3 mb-2 text-gray-700">Audio Effects</h4>
+                    <p class="text-gray-600 mb-2">The application offers five creative audio effects:</p>
+                    <ol class="list-decimal list-inside text-gray-600 pl-4">
+                        <li><strong>Robot Voice</strong>: Quantizes audio amplitude for a mechanical sound</li>
+                        <li><strong>Chorus</strong>: Adds slightly pitch-shifted and delayed audio copies</li>
+                        <li><strong>Distortion</strong>: Hard clips the audio signal for a gritty texture</li>
+                        <li><strong>Tremolo</strong>: Applies amplitude modulation</li>
+                        <li><strong>Reverb</strong>: Simulates sound reflection using multiple delay lines</li>
+                    </ol>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-md">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">3. Pitch Estimation (<code>my_pyin.py</code>)</h3>
+                    <p class="text-gray-600">
+                        A custom implementation of the Probabilistic YIN (PYIN) pitch estimation algorithm, which:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 pl-4">
+                        <li>Detects fundamental frequencies in audio frames</li>
+                        <li>Distinguishes between voiced and unvoiced segments</li>
+                        <li>Uses signal processing techniques like cumulative mean normalized difference function and parabolic interpolation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700">Code Architecture</h2>
+            <p class="text-gray-600 mb-4">
+                The application follows a modular design:
+            </p>
+            <ol class="list-decimal list-inside text-gray-600 pl-4">
+                <li>Pitch detection (<code>my_pyin.py</code>)</li>
+                <li>Pitch correction (<code>autotune.py</code>)</li>
+                <li>Web interface (<code>app.py</code>)</li>
+            </ol>
+            <p class="text-gray-600 mb-4">
+                Each module has a specific responsibility, making the code maintainable and extensible.
+            </p>
+        </section>
+
+        <section class="mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-700">Conclusion</h2>
+            <p class="text-gray-600 leading-relaxed">
+                This pitch correction application demonstrates the power of digital signal processing in audio manipulation. By combining algorithmic techniques with an intuitive web interface, it provides the user with a versatile tool for creative audio transformation.
+            </p>
+        </section>
+    </div>
+</body>
+</html>
